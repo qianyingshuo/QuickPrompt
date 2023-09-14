@@ -7,6 +7,7 @@ namespace QP{
 
 
 class singleElement;
+class QuickPrompt;
 
 
 
@@ -14,6 +15,7 @@ class element
 {
 
     friend class singleElement;
+    friend class QuickPrompt;
 private:
     QString title = "noNameElement";
     QString contentBase;

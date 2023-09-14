@@ -36,6 +36,8 @@ Thumbs.db
 /.qmake.stash
 /debug
 /release
+/.vs
+/.cache
 compile_commands.json
 
 # qtcreator generated files

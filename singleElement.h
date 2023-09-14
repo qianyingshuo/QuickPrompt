@@ -19,8 +19,14 @@ public:
     explicit singleElement(element e, QWidget *parent = nullptr);
     ~singleElement();
 
+    bool eventFilter(QObject *obj, QEvent *event);
+
+    public slots:
+    void on_pushButton_clicked();
+
 private:
      void parseElementSetting();
+     QString generateResult();
 private:
     Ui::singleElement *ui;
     element m_initData;

@@ -17,8 +17,11 @@ public:
     QuickPrompt(QWidget *parent = nullptr);
     ~QuickPrompt();
 
+    void creatViewByFile();
+
 private:
     Ui::QuickPrompt *ui;
+    bool isRight = false;
 };
 
 }

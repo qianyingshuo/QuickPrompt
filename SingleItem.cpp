@@ -18,17 +18,15 @@ SingleItem::~SingleItem()
 
 void SingleItem::setName(QString name)
 {
-    if(name.endsWith(":"))
-        ui->name->setText(name+":");
-    else
-        ui->name->setText(name);
+     ui->item->setPlaceholderText(name);
 }
 
 QString SingleItem::getItemContent()
 {
     QString content = ui->item->text();
-    content.simplified();
+    content = content.simplified();
     content.remove("\r\n");
+    content.remove("\n");
     return content;
 }
 }
