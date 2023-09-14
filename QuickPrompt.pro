@@ -16,14 +16,21 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    SingleItem.cpp \
     main.cpp \
-    QuickPrompt.cpp
+    QuickPrompt.cpp \
+    singleElement.cpp
 
 HEADERS += \
-    QuickPrompt.h
+    DataTypeDefine.h \
+    QuickPrompt.h \
+    SingleItem.h \
+    singleElement.h
 
 FORMS += \
-    QuickPrompt.ui
+    QuickPrompt.ui \
+    SingleItem.ui \
+    singleElement.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

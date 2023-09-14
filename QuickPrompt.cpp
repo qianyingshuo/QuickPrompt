@@ -1,6 +1,9 @@
 #include "QuickPrompt.h"
 #include "ui_QuickPrompt.h"
 
+namespace QP {
+
+
 QuickPrompt::QuickPrompt(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::QuickPrompt)
@@ -13,3 +16,4 @@ QuickPrompt::~QuickPrompt()
     delete ui;
 }
 
+}

@@ -7,6 +7,8 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class QuickPrompt; }
 QT_END_NAMESPACE
 
+namespace QP {
+
 class QuickPrompt : public QMainWindow
 {
     Q_OBJECT
@@ -18,4 +20,6 @@ public:
 private:
     Ui::QuickPrompt *ui;
 };
+
+}
 #endif // QUICKPROMPT_H
