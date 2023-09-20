@@ -41,7 +41,6 @@ jobs:
           cache: 'false'
           cache-key-prefix: 'install-qt-action'
           setup-python: 'true'
-          tools: 'tools_ifw tools_qtcreator'
           set-env: 'true'
           tools-only: 'false'
           aqtversion: '==3.1.*'
