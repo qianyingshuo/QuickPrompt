@@ -27,7 +27,7 @@ jobs:
     env:
       targetName: QuickPrompt.exe
 
-    step:
+    steps:
       - name: Install Qt
         uses: jurplel/install-qt-action@v3
         with:
