@@ -41,6 +41,7 @@ jobs:
           cache: 'false'
           cache-key-prefix: 'install-qt-action'
           setup-python: 'true'
+          tools: 'tools_windeployqt'
           set-env: 'true'
           tools-only: 'false'
           aqtversion: '==3.1.*'
@@ -61,6 +62,7 @@ jobs:
           echo vcToolsInstallDir=%VCToolsInstallDir% >> %GITHUB_ENV%
           echo vcToolsRedistDir=%VCToolsRedistDir% >> %GITHUB_ENV%
           dir release
+          tree D:\a\QuickPrompt/Qt/
       - name: package
         id: package      
         env:
