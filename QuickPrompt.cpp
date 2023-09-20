@@ -81,6 +81,11 @@ void QuickPrompt::creatViewByFile()
         }
         isRight = !isRight;
     }
+    QString qssfilename = QCoreApplication::applicationDirPath() + "/MacOS.qss";
+    QFile qssfile(qssfilename);
+    qssfile.open(QFile::ReadOnly);
+    QString styleSheet = QLatin1String(qssfile.readAll());
+    this->setStyleSheet(styleSheet);
 }
 
 }

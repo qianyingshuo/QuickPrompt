@@ -7,7 +7,7 @@
 using namespace QP;
 
 singleElement::singleElement(element e, QWidget *parent ) :
-    QWidget(parent),
+    QFrame(parent),
     m_initData(e),
     ui(new Ui::singleElement)
 {

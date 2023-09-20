@@ -1,7 +1,7 @@
 #ifndef SINGLEELEMENT_H
 #define SINGLEELEMENT_H
 
-#include <QWidget>
+#include <QFrame>
 #include "DataTypeDefine.h"
 #include <QList>
 #include <QPair>
@@ -11,7 +11,7 @@ class singleElement;
 }
 
 namespace QP{
-class singleElement : public QWidget
+class singleElement : public QFrame
 {
     Q_OBJECT
 
