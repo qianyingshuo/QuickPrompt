@@ -10,4 +10,11 @@
         <file>res/favicon-16x16.png</file>
         <file>res/favicon-32x32.png</file>
     </qresource>
+    <qresource prefix="/icon">
+        <file>res/icons8-bing-48.png</file>
+        <file>res/icons8-chatgpt-48.png</file>
+    </qresource>
+    <qresource prefix="/tr">
+        <file>QucikPrompt_zh.qm</file>
+    </qresource>
 </RCC>

@@ -5,6 +5,7 @@
 #include "DataTypeDefine.h"
 #include <QList>
 #include <QPair>
+#include <functional>
 
 namespace Ui {
 class singleElement;

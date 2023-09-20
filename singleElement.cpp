@@ -3,6 +3,10 @@
 #include <QSet>
 #include "SingleItem.h"
 #include <QClipboard>
+#include "ApplicationSetting.h"
+#include "DataTypeDefine.h"
+#include <QUrl>
+#include <QProcess>
 
 using namespace QP;
 
@@ -51,6 +55,18 @@ void singleElement::on_pushButton_clicked()
 {
     QClipboard* clip = QApplication::clipboard();
     clip->setText(generateResult());
+    if(true == ui->BingAI->isChecked())
+    {
+        QString browser =ApplicationSetting::getInstance()->getBrowserPath();
+        QString netAddress = BINGAI_NET_ADDRESS_QUESTION;
+        QUrl url(netAddress.replace("_oO_Question_Oo_", generateResult()));
+        QStringList encodeStr;
+        encodeStr << url.toEncoded();
+
+        QProcess process(this);
+        process.startDetached(browser, encodeStr);
+    }
+
 }
 
 void singleElement::parseElementSetting()

@@ -16,12 +16,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    ApplicationSetting.cpp \
     SingleItem.cpp \
     main.cpp \
     QuickPrompt.cpp \
     singleElement.cpp
 
 HEADERS += \
+    ApplicationSetting.h \
     DataTypeDefine.h \
     QuickPrompt.h \
     SingleItem.h \
@@ -39,3 +41,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     qpres.qrc
+
+TRANSLATIONS += QucikPrompt_zh.ts

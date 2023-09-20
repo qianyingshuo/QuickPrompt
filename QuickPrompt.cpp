@@ -5,6 +5,7 @@
 #include "DataTypeDefine.h"
 #include <QTextStream>
 #include "singleElement.h"
+#include <QAction>
 
 namespace QP {
 
@@ -14,6 +15,7 @@ QuickPrompt::QuickPrompt(QWidget *parent)
     , ui(new Ui::QuickPrompt)
 {
     ui->setupUi(this);
+    QAction *setBrowserPath = ui->menubar->addAction(tr("select browser"));
     creatViewByFile();
     this->setWindowIcon(QIcon(":/logo/res/favicon.ico"));
 }
