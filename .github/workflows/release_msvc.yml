@@ -1,0 +1,59 @@
+name: compile QuickPrompt
+run-name: windows compiling
+on:
+  push:
+    branches:
+      - release
+    paths-ignore:
+      - 'Readme.md'
+  pull_request:
+    paths-ignore:
+      - 'Readme.md'
+
+jobs:
+  build:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        include:
+          - qt_ver: 5.14.2
+            qt_arch: win32_msvc2017
+            msvc_arch: x86
+            qt_arch_install: msvc2017
+          - qt_ver: 5.14.2           
+            qt_arch: win64_msvc2017_64
+            msvc_arch: x64
+            qt_arch_install: msvc2017_64
+    env:
+      targetName: QuickPrompt.exe
+
+    step:
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v3
+        with:
+          version: ${{ matrix.qt_ver }}
+          target: 'desktop'
+          arch: ${{ matrix.qt_arch }}
+          dir: '${{ github.workspace }}/Qt/'
+          install-deps: 'true'
+          modules: 'qtwidget qtprintsupport'
+          archives: 'qtwidget qtbase'
+          cache: 'false'
+          cache-key-prefix: 'install-qt-action'
+          setup-python: 'true'
+          tools: 'tools_ifw tools_qtcreator, qt.tools.qtcreator'
+          set-env: 'true'
+          tools_only: 'false'
+          aqtversion: '==3.1.*'
+          py7zrversion: '==0.20.*'
+          extra: '--external 7z'
+
+      - name: Check Out
+        uses: actions/checkout@v4
+
+      - name: build-msvc
+        shell: cmd
+        run: |
+          call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" ${{ matrix.msvc_arch }}
+          qmake
+          nmake
