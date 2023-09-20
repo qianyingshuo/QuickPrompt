@@ -36,14 +36,8 @@ jobs:
           version: ${{ matrix.qt_ver }}
           target: 'desktop'
           arch: ${{ matrix.qt_arch }}
-          install-deps: 'true'
-          archives: 'qtwidget qtbase qtprintsupport'
           cache: 'false'
-          cache-key-prefix: 'install-qt-action'
-          setup-python: 'true'
-          tools: 'tools_windeployqt'
           set-env: 'true'
-          tools-only: 'false'
           aqtversion: '==2.0.5'
           py7zrversion: '==0.20.*'
           extra: '--external 7z'
