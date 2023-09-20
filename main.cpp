@@ -14,7 +14,9 @@ int main(int argc, char *argv[])
     }
     // 加载翻译文件:End
 
-
+    QCoreApplication::setOrganizationName("QP");
+    QCoreApplication::setOrganizationDomain("qp.com");
+    QCoreApplication::setApplicationName("QuickPrompt");
     QuickPrompt w;
     w.show();
     return a.exec();

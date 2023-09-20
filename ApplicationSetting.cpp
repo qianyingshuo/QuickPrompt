@@ -13,6 +13,7 @@ ApplicationSetting *ApplicationSetting::getInstance()
     if(nullptr == p)
     {
          p = new ApplicationSetting();
+         return p;
     }
     else
     {

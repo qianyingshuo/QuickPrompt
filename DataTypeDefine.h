@@ -4,7 +4,7 @@
 #include <QString>
 #include <QStringList>
 
-#define BINGAI_NET_ADDRESS_QUESTION  "https://www.bing.com/search?form=MY0291&OCID=MY0291&q=_oO_Question_Oo_&showconv=1"
+#define BINGAI_NET_ADDRESS_QUESTION  "https://www.bing.com/search?form=MY0291&OCID=MY0291&q=_oO_Question_Oo_&showconv=0"
 namespace QP{
 
 

@@ -6,6 +6,9 @@
 #include <QTextStream>
 #include "singleElement.h"
 #include <QAction>
+#include "ApplicationSetting.h"
+#include <QFileDialog>
+#include <QTextCodec>
 
 namespace QP {
 
@@ -15,14 +18,44 @@ QuickPrompt::QuickPrompt(QWidget *parent)
     , ui(new Ui::QuickPrompt)
 {
     ui->setupUi(this);
+    parserAppSetting();
     QAction *setBrowserPath = ui->menubar->addAction(tr("select browser"));
     creatViewByFile();
     this->setWindowIcon(QIcon(":/logo/res/favicon.ico"));
+    connect(setBrowserPath, &QAction::triggered, this, &QuickPrompt::setNewBrowserPath);
 }
 
 QuickPrompt::~QuickPrompt()
 {
     delete ui;
+}
+
+void QuickPrompt::setNewBrowserPath()
+{
+    QString fileName = QFileDialog::getOpenFileName(this, tr("select browser"),
+                                                    "/home",
+                                                    tr("browser (*.exe)"));
+    if(!fileName.isNull())
+    {
+        ApplicationSetting::getInstance()->setBrowserPath(fileName);
+        m_appSet->setValue("browserPath", fileName);
+        m_appSet->sync();
+    }
+}
+
+void QuickPrompt::parserAppSetting()
+{
+
+    QString fileName = QCoreApplication::applicationDirPath() + "/qp.ini";
+    if(!m_appSet)
+    {
+        m_appSet = new QSettings(fileName, QSettings::IniFormat);
+        m_appSet->setIniCodec(QTextCodec::codecForName("UTF-8"));
+    }
+    if(m_appSet->contains("browserPath") && true != m_appSet->value("browserPath").isNull())
+    {
+        ApplicationSetting::getInstance()->setBrowserPath(m_appSet->value("browserPath").toString());
+    }
 }
 
 void QuickPrompt::creatViewByFile()
