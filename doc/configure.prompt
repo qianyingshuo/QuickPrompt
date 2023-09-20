@@ -1,0 +1,35 @@
+ELEMENT_BEGIN 单词学习
+依据dictionary.cambridge.org/zhs/，给出 _oOS_word_EOo_ 的原型，词性，词形，用法
+ELEMENT_END
+
+ELEMENT_BEGIN 单词例句
+给出一些 _oOS_$1_EOo_ 这个词的例句，在这些例句后的括号中给出这个例句的中文翻译
+ELEMENT_END
+
+ELEMENT_BEGIN 单词搭配
+ _oOS_$1_EOo_ 这个词有没有固定搭配
+ELEMENT_END
+
+ELEMENT_BEGIN 单词学习总
+我是一个英语的学习者，希望你依据dictionary.cambridge.org/zhs/，给出 _oOS_word_EOo_ 的原型，词性，词形，用法，
+并且给出5个 _oOS_word_EOo_这个词的例句，在这些例句后的括号中给出这个例句的中文翻译，
+最后如果_oOS_word_EOo_这个词有固定搭配或习语，并分别给出这些固定搭配的中文意思。我希望你能在给出回应之前反复检查完整性和正确性
+ELEMENT_END
+
+ELEMENT_BEGIN 整句翻译
+依据dictionary.cambridge.org，给出 _oOS_word_EOo_ 的翻译，
+并分析_oOS_word_EOo_的语法结构
+ELEMENT_END
+
+ELEMENT_BEGIN 句子中词的意思
+依据dictionary.cambridge.org，给出 _oOS_句子_EOo_ 的翻译，
+并分析_oOS_句子_EOo_中的 _oOS_word_EOo_ 的意思。
+ELEMENT_END
+
+ELEMENT_BEGIN VTK某个类的使用
+Take a deep breath, then complete the following tasks step by step:
+Based on docs.vtk.org, provide me with _oOS_某个vtk类_EOo_'s documentation, show me  the documentation and summarize the URLs of the pages you found.
+In examples.vtk.org, find C++ examples about _oOS_某个vtk类_EOo_, give me the code of the examples, then explain the code for me. Summarize the URLs of the pages you found.
+In stackoverflow.com, find hot questions about _oOS_某个vtk类_EOo_, paraphrase the questions for me. Summarize the URLs of the pages you found.
+give your respond in chinese to me.
+ELEMENT_END

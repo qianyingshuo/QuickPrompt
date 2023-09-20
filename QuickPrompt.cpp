@@ -15,6 +15,7 @@ QuickPrompt::QuickPrompt(QWidget *parent)
 {
     ui->setupUi(this);
     creatViewByFile();
+    this->setWindowIcon(QIcon(":/logo/res/favicon.ico"));
 }
 
 QuickPrompt::~QuickPrompt()
@@ -81,8 +82,7 @@ void QuickPrompt::creatViewByFile()
         }
         isRight = !isRight;
     }
-    QString qssfilename = QCoreApplication::applicationDirPath() + "/MacOS.qss";
-    QFile qssfile(qssfilename);
+    QFile qssfile(":/qss/res/MacOS.qss");
     qssfile.open(QFile::ReadOnly);
     QString styleSheet = QLatin1String(qssfile.readAll());
     this->setStyleSheet(styleSheet);
