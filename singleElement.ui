@@ -120,11 +120,17 @@
          <height>20</height>
         </size>
        </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
        <property name="lineWidth">
         <number>0</number>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="textFormat">
+        <enum>Qt::PlainText</enum>
        </property>
        <property name="pixmap">
         <pixmap resource="qpres.qrc">:/icon/res/icons8-bing-48.png</pixmap>
