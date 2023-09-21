@@ -55,8 +55,7 @@ jobs:
           echo winSdkVer=%WindowsSdkVersion% >> %GITHUB_ENV%
           echo vcToolsInstallDir=%VCToolsInstallDir% >> %GITHUB_ENV%
           echo vcToolsRedistDir=%VCToolsRedistDir% >> %GITHUB_ENV%
-          dir release
-          tree D:\a\QuickPrompt/Qt/
+          echo ${{ github.event.ref }}
       - name: package
         id: package      
         env:
