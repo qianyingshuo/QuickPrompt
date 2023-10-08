@@ -66,6 +66,16 @@ void singleElement::on_pushButton_clicked()
         QProcess process(this);
         process.startDetached(browser, encodeStr);
     }
+    else
+    {
+        QString browser = ApplicationSetting::getInstance()->getBrowserPath();
+        QUrl url(BINGAI_NET_ADDRESS_CONST_QUESTION);
+        QStringList encodeStr;
+        encodeStr << url.toEncoded();
+
+        QProcess process(this);
+        process.startDetached(browser, encodeStr);
+    }
 
 }
 
